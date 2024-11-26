@@ -1,0 +1,48 @@
+<div class="navbar bg-base-100 bg-primary text-primary-content">
+  <div class="flex-1">
+    <a class="btn btn-ghost text-xl">{{ title }}</a>
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal px-1" id="nav_links">
+        <!-- About ************************************************* -->
+        <li>
+            <button mat-flat-button [matTooltip]="purpose.tooltip" onclick="objectif.showModal()">{{ purpose.name }}</button>
+        </li>
+        <dialog id="objectif" class="modal">
+            <div class="modal-box">
+              <h3 class="text-lg font-bold text-white">
+                {{ purpose.modal_title }}
+              </h3>
+              <p class="py-4 text-white">
+                {{ purpose.modal_content }}
+              </p>
+              <img [src]="purpose.modal_image" alt="purpose_image">
+            </div>
+            <form method="dialog" class="modal-backdrop">
+              <button>close</button>
+            </form>
+        </dialog>
+        <!-- Technical Portfolio *********************************** -->
+        <li>
+            <button mat-flat-button [matTooltip]="technical_portfolio.tooltip">
+                <a [href]="technical_portfolio.link" target="_blank">
+                    {{ technical_portfolio.name }}
+                </a>
+            </button>
+        </li>
+      <li>
+        <!-- More Links ******************************************* -->
+        <details>
+          <summary [matTooltip]="more_links.tooltip">{{ more_links.title }}</summary>
+          <ul class="bg-base-300 rounded-t-none p-2 text-neutral-content">
+            <li *ngFor="let item of more_links.url_list">
+                <a [href]="item.url" target="_blank">
+                    {{ item.name }}
+                </a>
+            </li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </div>
+</div>

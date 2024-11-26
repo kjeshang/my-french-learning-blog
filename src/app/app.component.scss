@@ -1,0 +1,13 @@
+#toggle_content {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#toggle_content mat-button-toggle-group mat-button-toggle {
+    color: white;
+}
+
+::ng-deep .mat-button-toggle-checked {
+    background-color: aquamarine !important;
+    color: black !important;
+}

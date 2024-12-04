@@ -3,22 +3,46 @@
     padding: 5px;
 }
 
-#blog_options {
+#blog_toggle {
     text-align: center;
     margin: 10px;
+    justify-self: center;
+}
+
+#blog_filter {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#blog_filter mat-form-field {
+    width: 80vw;
 }
 
 #blog_post_selected {
-    margin: 10px;
+    margin: 10px auto;
     padding: 10px;
     color: black;
+    display: flow-root;
 }
 
 #blog_post_selected mat-card-header {
     margin-bottom: 15px;
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
+    display: flow-root;
 }
+
+#blog_post_selected_chip mat-chip {
+    display: inline-flex;
+}
+
+#blog_post_selected_chip mat-chip span {
+    word-wrap:normal;
+    white-space: normal;
+}
+  
 
 #blog_post_selected mat-card-content {
     color: black;
@@ -29,5 +53,3 @@
     margin-top: 20px;
     padding: 4px;
 }
-
-

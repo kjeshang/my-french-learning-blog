@@ -1,48 +1,86 @@
 <div class="navbar bg-base-100 bg-primary text-primary-content">
-  <div class="flex-1">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h8m-8 6h16" />
+        </svg>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-300 rounded-box z-[1] mt-3 w-52 p-2 shadow text-neutral-content" id="nav_links_hidden">
+        <!-- Purpose (Hidden) ************************************************* -->
+        <li>
+          <button mat-flat-button [matTooltip]="purpose.tooltip" matTooltipPosition="right" onclick="objectif.showModal()"><a>{{ purpose.name }}</a></button>
+        </li>
+        <!-- Technical Portfolio (Hidden) *********************************** -->
+        <li>
+          <button mat-flat-button [matTooltip]="technical_portfolio.tooltip" matTooltipPosition="right">
+            <a [href]="technical_portfolio.link" target="_blank">
+                {{ technical_portfolio.name }}
+            </a>
+          </button>
+        </li>
+      </ul>
+    </div>
     <a class="btn btn-ghost text-xl">{{ title }}</a>
   </div>
-  <div class="flex-none">
+  <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1" id="nav_links">
-        <!-- About ************************************************* -->
-        <li>
-            <button mat-flat-button [matTooltip]="purpose.tooltip" onclick="objectif.showModal()">{{ purpose.name }}</button>
-        </li>
-        <dialog id="objectif" class="modal">
-            <div class="modal-box">
-              <h3 class="text-lg font-bold text-white">
-                {{ purpose.modal_title }}
-              </h3>
-              <p class="py-4 text-white">
-                {{ purpose.modal_content }}
-              </p>
-              <img [src]="purpose.modal_image" alt="purpose_image">
-            </div>
-            <form method="dialog" class="modal-backdrop">
-              <button>close</button>
-            </form>
-        </dialog>
-        <!-- Technical Portfolio *********************************** -->
-        <li>
-            <button mat-flat-button [matTooltip]="technical_portfolio.tooltip">
-                <a [href]="technical_portfolio.link" target="_blank">
-                    {{ technical_portfolio.name }}
-                </a>
-            </button>
-        </li>
+      <!-- Purpose ************************************************* -->
       <li>
-        <!-- More Links ******************************************* -->
-        <details>
-          <summary [matTooltip]="more_links.tooltip">{{ more_links.title }}</summary>
-          <ul class="bg-base-300 rounded-t-none p-2 text-neutral-content">
-            <li *ngFor="let item of more_links.url_list">
-                <a [href]="item.url" target="_blank">
-                    {{ item.name }}
-                </a>
-            </li>
-          </ul>
-        </details>
+        <button mat-flat-button [matTooltip]="purpose.tooltip" onclick="objectif.showModal()">{{ purpose.name }}</button>
+      </li>
+      <!-- Technical Portfolio *********************************** -->
+      <li>
+        <button mat-flat-button [matTooltip]="technical_portfolio.tooltip">
+          <a [href]="technical_portfolio.link" target="_blank">
+              {{ technical_portfolio.name }}
+          </a>
+        </button>
       </li>
     </ul>
   </div>
+  <!-- More Links ******************************************* -->
+  <div class="navbar-end">
+    <div class="dropdown dropdown-end">
+      <a><div tabindex="0" role="button" class="btn" [matTooltip]="more_links.tooltip">
+        {{ more_links.title }}
+      </div></a>
+      <ul
+        tabindex="0"
+        class="menu dropdown-content bg-base-300 rounded-box z-[1] mt-4 w-52 p-2 shadow text-neutral-content">
+        <li *ngFor="let item of more_links.url_list">
+          <a [href]="item.url" target="_blank">
+              {{ item.name }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
+
+<!-- About Modal Dialog -->
+<dialog id="objectif" class="modal">
+  <div class="modal-box">
+    <h3 class="text-lg font-bold text-white">
+      {{ purpose.modal_title }}
+    </h3>
+    <p class="py-4 text-white">
+      {{ purpose.modal_content }}
+    </p>
+    <img [src]="purpose.modal_image" alt="purpose_image">
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>

@@ -1,8 +1,20 @@
 # MyFrenchLearningBlog
 
-To see live version... [***Click Here***](https://my-french-learning-blog.netlify.app/)
+**Please note that this is an initial legacy version of my french learning blog. Below is the GitHub Repo link of my current french learning blog**
+[Current Version](https://github.com/kjeshang/my-french-learning-blog-updated.git)
 
 > To see backend repository ... [Click Here](https://github.com/kjeshang/MyFrenchLearningBlog_Backend)
+
+## Screenshots
+
+|Image|Description|
+|--|--|
+|![Initial Page Load](Images/Initial%20Page%20Load.png)|Initial Page Load|
+|![Modal Pop Up](Images/Modal%20pop%20up.png)|Modal Pop Up|
+|![Show More Links](Images/Show%20more%20links.png)|Show More Links|
+|![Page Filter](Images/Page%20Filter.png)|Page Filter|
+|![Select Blog Without Hiding Table](Images/Select%20blog%20without%20hiding%20table.png)|Select Blog Without Hiding Table|
+|![Hide Table to Read Blog](Images/Hide%20table%20to%20read%20blog.png)|Hide Table to Read Blog|
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
 
